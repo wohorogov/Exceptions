@@ -56,32 +56,32 @@ public class Calc {
         }
         System.out.println("Конец заполнения LinkedList " + LocalDateTime.now());
 
-//        System.out.println("Изменение " + COUNT + " элементов ArrayList " + LocalDateTime.now());
-//        for (int i = 0; i < COUNT; i++) {
-//            list.set(i + COUNT, new ComplexNumberlmpl((int)Math.random() * 100, (int)Math.random() *100));
-//        }
-//        System.out.println("Конец Изменение " + COUNT + " элементов ArrayList " + LocalDateTime.now());
-//
-//        System.out.println("Изменение " + COUNT + " элементов LinkedList " + LocalDateTime.now());
-//        for (int i = 0; i < COUNT; i++) {
-//            listLink.set(i + COUNT, new ComplexNumberlmpl((int)Math.random() * 100, (int)Math.random() *100));
-//        }
-//        System.out.println("Конец Изменение " + COUNT + " элементов LinkedList " + LocalDateTime.now());
-//
-//        ComplexNumber maxComplexArrayList = new ComplexNumberlmpl(0, 0);
-//        ComplexNumber maxComplexLinkedList = new ComplexNumberlmpl(0, 0);
+        System.out.println("Изменение " + COUNT + " элементов ArrayList " + LocalDateTime.now());
+        for (int i = 0; i < COUNT; i++) {
+            list.set(i + COUNT, new ComplexNumberlmpl((int)Math.random() * 100, (int)Math.random() *100));
+        }
+        System.out.println("Конец Изменение " + COUNT + " элементов ArrayList " + LocalDateTime.now());
 
-//        System.out.println("Нахождение сумм всех частей ArrayList " + LocalDateTime.now());
-//        for (int i = 0; i < MAXCOUNT; i++) {
-//            maxComplexArrayList.add(list.get(i));
-//        }
-//        System.out.println("Конец нахождения сумм всех частей ArrayList " + LocalDateTime.now());
-//
-//        System.out.println("Нахождение сумм всех частей LinkedList " + LocalDateTime.now());
-//        for (int i = 0; i < MAXCOUNT; i++) {
-//            maxComplexLinkedList.add(listLink.get(i));
-//        }
-//        System.out.println("Конец нахождения сумм всех частей LinkedList " + LocalDateTime.now());
+        System.out.println("Изменение " + COUNT + " элементов LinkedList " + LocalDateTime.now());
+        for (int i = 0; i < COUNT; i++) {
+            listLink.set(i + COUNT, new ComplexNumberlmpl((int)Math.random() * 100, (int)Math.random() *100));
+        }
+        System.out.println("Конец Изменение " + COUNT + " элементов LinkedList " + LocalDateTime.now());
+
+        ComplexNumber maxComplexArrayList = new ComplexNumberlmpl(0, 0);
+        ComplexNumber maxComplexLinkedList = new ComplexNumberlmpl(0, 0);
+
+        System.out.println("Нахождение сумм всех частей ArrayList " + LocalDateTime.now());
+        for (int i = 0; i < MAXCOUNT; i++) {
+            maxComplexArrayList.add(list.get(i));
+        }
+        System.out.println("Конец нахождения сумм всех частей ArrayList " + LocalDateTime.now());
+
+        System.out.println("Нахождение сумм всех частей LinkedList " + LocalDateTime.now());
+        for (int i = 0; i < MAXCOUNT; i++) {
+            maxComplexLinkedList.add(listLink.get(i));
+        }
+        System.out.println("Конец нахождения сумм всех частей LinkedList " + LocalDateTime.now());
         Comparator<ComplexNumberlmpl> comparator = (o1, o2) -> o1.compareTo(o2);
         ComplexNumberlmpl maxComplexNumberlmpl = Collections.max(list, comparator);
         ComplexNumberlmpl minComplexNumberlmpl = Collections.min(list, comparator);
