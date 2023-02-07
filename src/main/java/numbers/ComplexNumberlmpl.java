@@ -1,6 +1,8 @@
 package numbers;
 
-public class ComplexNumberlmpl implements ComplexNumber{
+import java.util.Comparator;
+
+public class ComplexNumberlmpl implements ComplexNumber, Comparable<ComplexNumberlmpl>{
     private double realPart;
     private double imaginaryPart;
 
@@ -15,14 +17,15 @@ public class ComplexNumberlmpl implements ComplexNumber{
     }
 
     @Override
+    public double getImaginaryPart() {
+        return imaginaryPart;
+    }
+    @Override
     public double getRealPart() {
         return realPart;
     }
 
-    @Override
-    public double getImaginaryPart() {
-        return imaginaryPart;
-    }
+
 
     @Override
     public ComplexNumber add(ComplexNumber c) {
@@ -55,5 +58,21 @@ public class ComplexNumberlmpl implements ComplexNumber{
             this.imaginaryPart /= c.getImaginaryPart();
         }
         return this;
+    }
+
+    public boolean equals(ComplexNumber c) {
+        return (this.realPart == c.getRealPart() && this.imaginaryPart == c.getImaginaryPart());
+    }
+    @Override
+    public int compareTo(ComplexNumberlmpl o) {
+        double thisModule = Math.sqrt(Math.pow(this.realPart, 2) + Math.pow(this.imaginaryPart, 2));
+        double secondModule = Math.sqrt(Math.pow(o.getRealPart(), 2) +
+                Math.pow(o.getImaginaryPart(), 2));
+        if (thisModule > secondModule) {
+            return 1;
+        } else if (thisModule < secondModule) {
+            return -1;
+        }
+        else return 0;
     }
 }

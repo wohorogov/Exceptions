@@ -2,7 +2,7 @@ package resource;
 
 import java.io.IOException;
     
-public class MyResourceImpl implements MyResource {
+public class MyResourceImpl implements MyResource, AutoCloseable{
 
     @Override
     public void open() throws IOException {
